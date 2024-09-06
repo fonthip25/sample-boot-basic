@@ -1,0 +1,12 @@
+@Service
+public class KafkaProducer {
+
+    private static final String TOPIC = "movies";
+
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
+
+    public void sendMessage(String message) {
+        this.kafkaTemplate.send(TOPIC, message);
+    }
+}

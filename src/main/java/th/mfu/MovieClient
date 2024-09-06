@@ -1,0 +1,6 @@
+@FeignClient(name = "movie-service")
+public interface MovieClient {
+
+    @GetMapping("/movies")
+    List<Movie> getMovies();
+}
